@@ -53,6 +53,7 @@ export default class WeatherFetch {
         const params = {
             q: city,
             appid: this.apiKey,
+            units: 'metric',
         };
         return this.get('/weather', params);
     }

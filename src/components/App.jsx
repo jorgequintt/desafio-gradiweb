@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 import WeatherFetch from '../classes/WeatherFetch';
 
 import LocationsWeatherList from './Locations/LocationsWeatherList';
-import CurrentWeather from './Main City/CurrentWeather';
-import ForecastWeatherList from './Main City/ForecastWeatherList';
+import CurrentWeather from './MainCity/CurrentWeather';
+import ForecastWeatherList from './MainCity/ForecastWeatherList';
 
 /**
- * App Component
+ * @App Component
  *
  * In this component, we fetch weather data on component mount and then
  * pass them to their respective children components
@@ -30,6 +30,7 @@ export class App extends Component {
         // el forecast en un unico request
         const mainCityLat = '4.7110'; // Bogotá's Latitude
         const mainCityLon = '-74.063644'; // Bogotá's Longitude
+        const mainCity = 'Bogotá';
         const defaultLocation = 'Paris';
 
         const weatherFetch = new WeatherFetch();
@@ -45,7 +46,7 @@ export class App extends Component {
                 }
 
                 this.setState({
-                    mainCityData: mainCityData.success,
+                    mainCityData: { name: mainCity, data: mainCityData.success },
                     locationsData: [defaultLocationData.success],
                 });
             })
@@ -59,14 +60,14 @@ export class App extends Component {
         return (
             <div className="container">
                 {this.state.error ? (
-                    'Error' /* TODO */
+                    this.state.error /* TODO */
                 ) : this.state.mainCityData && this.state.locationsData.length > 0 ? (
                     <React.Fragment>
                         <div className="section-1">
-                            <CurrentWeather data={this.state.mainCityData} />
+                            <CurrentWeather cityData={this.state.mainCityData} />
                         </div>
                         <div className="section-2">
-                            <ForecastWeatherList data={this.state.mainCityData} />
+                            <ForecastWeatherList cityData={this.state.mainCityData} />
                         </div>
                         <div className="section-3">
                             <LocationsWeatherList locations={this.state.locationsData} />

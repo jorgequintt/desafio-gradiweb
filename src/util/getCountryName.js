@@ -246,7 +246,7 @@ const countryNames = {
     ZW: 'Zimbabwe',
 };
 
-function getCountryName(countryCode) {
+export default function getCountryName(countryCode) {
     if (countryNames.hasOwnProperty(countryCode)) {
         return countryNames[countryCode];
     } else {

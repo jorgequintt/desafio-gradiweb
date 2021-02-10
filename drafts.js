@@ -17,5 +17,6 @@ https://api.openweathermap.org/data/2.5/weather?q=Paris&appid={API_KEY}
 =============================================
 
 ToDo:
+    * Document component props
     * Add shadows to container
 */
