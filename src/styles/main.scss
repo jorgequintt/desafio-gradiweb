@@ -1,5 +1,11 @@
-html,
-body {
-    margin: 0;
-    background: #aaaaaa;
-}
+// core
+@import 'core/reset';
+@import 'core/fonts';
+
+// abstracts
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// components and common
+@import 'common';
+@import 'layout';

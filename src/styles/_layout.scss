@@ -1,0 +1,46 @@
+html,
+body {
+    height: 100vh;
+
+    #app {
+        height: 100vh;
+        background-color: $bgColor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    max-width: $screen-lg-min;
+    max-height: 550px;
+    background-color: #fff;
+    grid-gap: $gridGap;
+    padding: $containerPadding;
+    box-sizing: border-box;
+
+    .section-1,
+    .section-2,
+    .section-3 {
+        flex: 1;
+    }
+
+    /* Section 1 to row on small screens */
+    @include sm {
+        flex-direction: row;
+
+        .section-1 {
+            flex: 0 0 100%;
+        }
+    }
+
+    /* Container roundness only on from large screens and on */
+    @include lg {
+        border-radius: $roundness;
+    }
+}

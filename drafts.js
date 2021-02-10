@@ -17,5 +17,5 @@ https://api.openweathermap.org/data/2.5/weather?q=Paris&appid={API_KEY}
 =============================================
 
 ToDo:
-    * Set up webpack with SASS and React (Babel)
+    * Add shadows to container
 */
