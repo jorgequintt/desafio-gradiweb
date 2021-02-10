@@ -42,6 +42,7 @@ export default class WeatherFetch {
             lat,
             lon,
             exclude: 'minutely,hourly,alerts',
+            units: 'metric',
             appid: this.apiKey,
         };
 

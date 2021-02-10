@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { dayNumberToWeekDay } from '../../util/funcs';
 
-export class ForecastWeatherItem extends Component {
-    render() {
-        return <div></div>;
-    }
+export default function ForecastWeatherItem({ minTemp, maxTemp, weather, dayOfWeek }) {
+    return (
+        <div>
+            {dayNumberToWeekDay(dayOfWeek)}: {minTemp} / {maxTemp}, {weather}
+        </div>
+    );
 }
-
-export default ForecastWeatherItem;

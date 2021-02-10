@@ -2,9 +2,9 @@ import '../styles/main.scss';
 import React, { Component } from 'react';
 import WeatherFetch from '../classes/WeatherFetch';
 
-import AdditionalLocationsWeather from './Locations/LocationsWeatherList';
-import MainCurrentWeather from './Main City/CurrentWeather';
-import MainForecastWeather from './Main City/ForecastWeatherList';
+import LocationsWeatherList from './Locations/LocationsWeatherList';
+import CurrentWeather from './Main City/CurrentWeather';
+import ForecastWeatherList from './Main City/ForecastWeatherList';
 
 /**
  * App Component
@@ -58,15 +58,23 @@ export class App extends Component {
     render() {
         return (
             <div className="container">
-                <div className="section-1">
-                    <MainCurrentWeather data={this.state.mainCityData} />
-                </div>
-                <div className="section-2">
-                    <MainForecastWeather data={this.state.mainCityData} />
-                </div>
-                <div className="section-3">
-                    <AdditionalLocationsWeather locations={this.state.locationsData} />
-                </div>
+                {this.state.error ? (
+                    'Error' /* TODO */
+                ) : this.state.mainCityData && this.state.locationsData.length > 0 ? (
+                    <React.Fragment>
+                        <div className="section-1">
+                            <CurrentWeather data={this.state.mainCityData} />
+                        </div>
+                        <div className="section-2">
+                            <ForecastWeatherList data={this.state.mainCityData} />
+                        </div>
+                        <div className="section-3">
+                            <LocationsWeatherList locations={this.state.locationsData} />
+                        </div>
+                    </React.Fragment>
+                ) : (
+                    'Loading'
+                )}
             </div>
         );
     }
