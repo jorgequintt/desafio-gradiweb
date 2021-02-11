@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ForecastWeatherItem from './ForecastWeatherItem';
 
-export default function ForecastWeatherList({ cityData: { data } }) {
+function ForecastWeatherList({ cityData: { data } }) {
     const forecastItems = [];
 
     for (let i = 0; i < 3; i++) {
@@ -14,7 +15,7 @@ export default function ForecastWeatherList({ cityData: { data } }) {
                 maxTemp={dayForecast.temp.max}
                 day={dayForecast.dt}
                 weather={dayForecast.weather[0].main}
-                first={i === 0}
+                first={i === 0} // if its the first forecast, should be $mainColor
             />
         );
     }
@@ -28,3 +29,9 @@ export default function ForecastWeatherList({ cityData: { data } }) {
         </div>
     );
 }
+
+ForecastWeatherList.propTypes = {
+    cityData: PropTypes.object,
+};
+
+export default ForecastWeatherList;

@@ -5,6 +5,11 @@ export default class WeatherFetch {
         this.timeout = 10000;
     }
 
+    /**
+     * get()
+     * @param {string} endpoint : Endpoint source for the request
+     * @param {object} params : Get params for the request
+     */
     get(endpoint, params) {
         return new Promise((res) => {
             const encodedParams = new URLSearchParams(params).toString();
@@ -37,6 +42,11 @@ export default class WeatherFetch {
         });
     }
 
+    /**
+     * fetchCityDailyForecast()
+     * @param {string} lat : Target city's latitude
+     * @param {string} lon : Target city's longitude
+     */
     fetchCityDailyForecast(lat, lon) {
         const params = {
             lat,
@@ -49,6 +59,10 @@ export default class WeatherFetch {
         return this.get('/onecall', params);
     }
 
+    /**
+     * fetchCityCurrentWeather()
+     * @param {string} city
+     */
     fetchCityCurrentWeather(city) {
         const params = {
             q: city,

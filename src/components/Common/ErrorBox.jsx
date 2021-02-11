@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function ErrorBox({ textSize, iconSize, text }) {
+function ErrorBox({ textSize, iconSize, text }) {
     return (
         <div className="error-box">
             <i class="fas fa-exclamation-triangle error-icon" style={{ fontSize: iconSize + 'rem' }}></i>
@@ -10,3 +11,11 @@ export default function ErrorBox({ textSize, iconSize, text }) {
         </div>
     );
 }
+
+ErrorBox.propTypes = {
+    textSize: PropTypes.number,
+    iconSize: PropTypes.number,
+    text: PropTypes.string,
+};
+
+export default ErrorBox;

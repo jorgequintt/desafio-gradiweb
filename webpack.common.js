@@ -52,6 +52,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: './index.html',
+            favicon: './src/assets/icons/rain_color.svg',
         }),
         new MiniCssExtractPlugin(),
     ],

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import AddLocation from './AddLocation';
 import LocationWeatherItem from './LocationsWeatherItem';
 
@@ -11,7 +12,7 @@ import LocationWeatherItem from './LocationsWeatherItem';
  * locations. I prefered this over calling these components "ParisWeather" and such
  */
 
-export default function LocationsWeatherList({ locations }) {
+function LocationsWeatherList({ locations }) {
     const locationsListItems = [];
 
     for (let i = 0; i < locations.length; i++) {
@@ -37,3 +38,9 @@ export default function LocationsWeatherList({ locations }) {
         </div>
     );
 }
+
+LocationsWeatherList.propTypes = {
+    locations: PropTypes.array,
+};
+
+export default LocationsWeatherList;

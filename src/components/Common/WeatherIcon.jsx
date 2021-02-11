@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /* We import all svg images so we can obtain their URL after being
 moved by the file-loader */
@@ -12,7 +13,7 @@ function importAll(r) {
 
 const icons = importAll(require.context('../../assets/icons/', true, /.svg$/));
 
-export default function WeatherIcon({ weather, intent }) {
+function WeatherIcon({ weather, intent }) {
     let weatherIconSrc;
 
     const themedWeathers = ['Clouds', 'Thunderstorm', 'Drizzle', 'Rain', 'Snow'];
@@ -26,3 +27,10 @@ export default function WeatherIcon({ weather, intent }) {
         </div>
     );
 }
+
+WeatherIcon.propTypes = {
+    weather: PropTypes.string,
+    intent: PropTypes.string,
+};
+
+export default WeatherIcon;

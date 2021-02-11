@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function LoadingIcon({ size }) {
     return (
@@ -7,5 +8,9 @@ function LoadingIcon({ size }) {
         </div>
     );
 }
+
+LoadingIcon.propTypes = {
+    size: PropTypes.number,
+};
 
 export default LoadingIcon;

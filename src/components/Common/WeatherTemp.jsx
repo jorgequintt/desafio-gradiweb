@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function WeatherTemp({ temp }) {
+function WeatherTemp({ temp }) {
     return (
         <div className="temp">
             <span className="value">{temp}</span>
@@ -8,3 +9,9 @@ export default function WeatherTemp({ temp }) {
         </div>
     );
 }
+
+WeatherTemp.propTypes = {
+    temp: PropTypes.number,
+};
+
+export default WeatherTemp;

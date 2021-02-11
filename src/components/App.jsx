@@ -9,7 +9,7 @@ import LoadingBox from './Common/LoadingBox';
 import ErrorBox from './Common/ErrorBox';
 
 /**
- * @App Component
+ * App Component
  *
  * In this component, we fetch weather data on component mount and then
  * pass them to their respective children components
@@ -51,7 +51,7 @@ export class App extends Component {
 
                 this.setState({
                     mainCityData: { name: mainCity, data: mainCityData.success },
-                    locationsData: [sydneyData.success, parisData.success],
+                    locationsData: [parisData.success, sydneyData.success],
                 });
             })
             .catch((err) => {

@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { timestampToDayOfWeek } from '../../util/helpers';
 import WeatherIcon from '../Common/WeatherIcon';
 import WeatherTemp from '../Common/WeatherTemp';
 
-export default function ForecastWeatherItem({ minTemp, maxTemp, weather, day, first }) {
+function ForecastWeatherItem({ minTemp, maxTemp, weather, day, first }) {
     return (
         <div className={`forecast-weather-item  ${first ? 'first' : ''}`}>
             <div className="column-1">
@@ -21,3 +22,13 @@ export default function ForecastWeatherItem({ minTemp, maxTemp, weather, day, fi
         </div>
     );
 }
+
+ForecastWeatherItem.propTypes = {
+    minTemp: PropTypes.number,
+    maxTemp: PropTypes.number,
+    weather: PropTypes.string,
+    day: PropTypes.number,
+    first: PropTypes.bool,
+};
+
+export default ForecastWeatherItem;

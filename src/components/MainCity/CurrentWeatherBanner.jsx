@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { slugify } from '../../util/helpers';
 import WeatherIcon from '../Common/WeatherIcon';
 import WeatherTemp from '../Common/WeatherTemp';
@@ -12,10 +13,9 @@ function importAll(r) {
     });
     return banners;
 }
-
 const banners = importAll(require.context('../../assets/images/', true, /-banner.jpg$/));
 
-export default function CurrentWeatherBanner({ cityData: { name: cityName, data } }) {
+function CurrentWeatherBanner({ cityData: { name: cityName, data } }) {
     const currentWeather = data.current;
     const temp = currentWeather.temp;
     const weather = currentWeather.weather[0].main;
@@ -46,3 +46,9 @@ export default function CurrentWeatherBanner({ cityData: { name: cityName, data 
         </div>
     );
 }
+
+CurrentWeatherBanner.propTypes = {
+    cityData: PropTypes.object,
+};
+
+export default CurrentWeatherBanner;

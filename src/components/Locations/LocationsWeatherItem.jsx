@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import getCountryName from '../../util/getCountryName';
 import { getCardinal } from '../../util/helpers';
 import WeatherIcon from '../Common/WeatherIcon';
 import WeatherTemp from '../Common/WeatherTemp';
 
-export default function LocationsWeatherItem({ weather, temp, humidity, city, country, wind }) {
+function LocationsWeatherItem({ weather, temp, humidity, city, country, wind }) {
     const countryName = getCountryName(country);
 
     return (
@@ -33,3 +34,13 @@ export default function LocationsWeatherItem({ weather, temp, humidity, city, co
         </div>
     );
 }
+LocationsWeatherItem.propTypes = {
+    weather: PropTypes.string,
+    temp: PropTypes.number,
+    humidity: PropTypes.number,
+    city: PropTypes.string,
+    country: PropTypes.string,
+    wind: PropTypes.object,
+};
+
+export default LocationsWeatherItem;
