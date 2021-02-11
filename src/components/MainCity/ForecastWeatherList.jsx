@@ -18,5 +18,12 @@ export default function ForecastWeatherList({ cityData: { data } }) {
         );
     }
 
-    return <div className="forecast-weather-list">{forecastItems}</div>;
+    return (
+        <div className="forecast-weather-list">
+            <div className="forecast-title">
+                <span className="days">3 Days</span> Forecast
+            </div>
+            <div className="forecast-list-content">{forecastItems}</div>
+        </div>
+    );
 }

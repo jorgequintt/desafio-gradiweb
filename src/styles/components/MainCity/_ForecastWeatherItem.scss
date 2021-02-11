@@ -1,0 +1,75 @@
+$weatherItemRoundness: 15px;
+
+.forecast-weather-item {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 320px;
+    margin: 3px 0px;
+    position: relative;
+    z-index: auto;
+    background-color: #fff;
+    border-radius: $weatherItemRoundness;
+
+    @include sm {
+        max-width: 230px;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        border-radius: inherit;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 0;
+        box-shadow: $softShadowStyle;
+    }
+
+    .column-1,
+    .column-2,
+    .column-3 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .column-1 {
+        width: 50px;
+        align-items: center;
+    }
+
+    .column-2 {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem;
+        row-gap: 8px;
+
+        .weekday {
+            font-size: 0.9rem;
+        }
+        .weather {
+            font-size: 0.8rem;
+            color: gray;
+        }
+    }
+
+    .column-3 {
+        width: 70px;
+        height: 65px;
+
+        .min-max-temp {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            column-gap: 3px;
+            font-size: 1rem;
+            background-color: $mainColorAlter;
+            color: #fff;
+            justify-content: center;
+            align-items: center;
+            border-radius: $weatherItemRoundness;
+        }
+    }
+}

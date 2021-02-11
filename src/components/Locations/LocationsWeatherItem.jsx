@@ -7,8 +7,8 @@ export default function LocationsWeatherItem({ weather, temp, humidity, city, co
 
     return (
         <div>
-            {weather} {Math.round(temp)} {city} {countryName} {wind.speed}m/s{' '}
-            {getCardinal(wind.deg)} Humidity {humidity}%
+            {weather} {Math.round(temp)} {city} {countryName} {wind.speed}m/s {getCardinal(wind.deg)} Humidity{' '}
+            {humidity}%
         </div>
     );
 }

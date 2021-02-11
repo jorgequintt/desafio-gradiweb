@@ -22,6 +22,7 @@ body {
     padding: $containerPaddingSmallScreens;
     box-sizing: border-box;
     box-shadow: $softShadowStyle;
+    overflow: auto;
 
     .section-1,
     .section-2,
@@ -37,7 +38,7 @@ body {
 
         .section-1 {
             flex: 0 0 100%;
-            height: 50%;
+            height: 45%;
         }
     }
 

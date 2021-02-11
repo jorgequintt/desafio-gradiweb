@@ -1,6 +1,7 @@
 import React from 'react';
 import { slugify } from '../../util/helpers';
 import WeatherIcon from '../Common/WeatherIcon';
+import WeatherTemp from '../Common/WeatherTemp';
 
 /* We import all svg images so we can obtain their URL after being
 moved by the file-loader */
@@ -39,10 +40,7 @@ export default function CurrentWeatherBanner({ cityData: { name: cityName, data 
                     <div className="weather-title">{weather}</div>
                 </div>
                 <div className="temp-wrapper">
-                    <div className="temp">
-                        <span className="value">{temp}</span>
-                        <span className="celcius-symbol">○ c</span>
-                    </div>
+                    <WeatherTemp temp={temp} />
                 </div>
             </div>
         </div>

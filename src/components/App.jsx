@@ -35,19 +35,20 @@ export class App extends Component {
 
         const weatherFetch = new WeatherFetch();
         const mainCityDataPromise = weatherFetch.fetchCityDailyForecast(mainCityLat, mainCityLon);
-        const defaultLocationDataPromise = weatherFetch.fetchCityCurrentWeather(defaultLocation);
+        const parisDataPromise = weatherFetch.fetchCityCurrentWeather('Paris');
+        const sydneyDataPromise = weatherFetch.fetchCityCurrentWeather('Sydney');
 
         // Fetch weather information about the main city (Bogotá) and the initial additional location (Paris)
-        Promise.all([mainCityDataPromise, defaultLocationDataPromise])
+        Promise.all([mainCityDataPromise, parisDataPromise, sydneyDataPromise])
             .then((data) => {
-                const [mainCityData, defaultLocationData] = data;
-                if (mainCityData.error || defaultLocationData.error) {
+                const [mainCityData, parisData, sydneyData] = data;
+                if (mainCityData.error || parisData.error || sydneyData.error) {
                     return this.setState({ error: 'An error ocurred, please try again.' });
                 }
 
                 this.setState({
                     mainCityData: { name: mainCity, data: mainCityData.success },
-                    locationsData: [defaultLocationData.success],
+                    locationsData: [sydneyData.success, parisData.success],
                 });
             })
             .catch((err) => {

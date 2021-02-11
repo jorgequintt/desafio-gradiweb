@@ -17,7 +17,12 @@ https://api.openweathermap.org/data/2.5/weather?q=Paris&appid={API_KEY}
 =============================================
 
 ToDo:
+    * Finish up paris element
+    * Make loading and error elements
     * Document component props
-    * Add shadows to container
     * Favicon and App name
+    * Animations
+    * Deploy on netlify
+    * Write readme on how to build
+    * Send
 */
