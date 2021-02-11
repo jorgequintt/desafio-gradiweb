@@ -14,6 +14,7 @@ export default function ForecastWeatherList({ cityData: { data } }) {
                 maxTemp={dayForecast.temp.max}
                 day={dayForecast.dt}
                 weather={dayForecast.weather[0].main}
+                first={i === 0}
             />
         );
     }

@@ -12,7 +12,7 @@
     align-items: center;
     box-sizing: border-box;
 
-    @include sm {
+    @include md {
         display: block;
         padding: 0;
     }
@@ -27,38 +27,44 @@
         bottom: 0;
         background: linear-gradient(to right, #{$secondaryColor}AA, #{$secondaryColor}AA);
 
-        @include sm {
+        @include md {
             background: linear-gradient(to right, #{$secondaryColor}DD, rgba(0, 0, 0, 0));
         }
     }
 
-    .banner-title {
+    > .banner-title {
+        animation: fadeIn;
+        animation-duration: 0.3s;
+
         position: relative;
         font-weight: bold;
         color: $mainColorAlter;
         font-size: 1.7rem;
         display: inline;
 
-        .banner-icon {
+        > .banner-icon {
             margin-right: 0.5em;
         }
 
-        @include sm {
+        @include md {
             left: 70px;
             top: 70px;
             font-size: 2.7rem;
         }
     }
 
-    .weather-info-wrapper {
+    > .weather-info-wrapper {
+        animation: fadeIn;
+        animation-duration: 0.6s;
+
         color: #fff;
         position: relative;
         display: flex;
         flex-direction: row;
         margin-top: 2rem;
 
-        .weather,
-        .temp-wrapper {
+        > .weather-icon-wrapper,
+        > .temp-wrapper {
             width: 80px;
             height: 80px;
             display: flex;
@@ -68,34 +74,34 @@
             box-sizing: border-box;
         }
 
-        .weather {
+        > .weather-icon-wrapper {
             background-color: $mainColor;
             border-radius: 20px 0px 0px 20px;
 
-            .weather-title {
+            > .weather-title {
                 font-size: 0.7rem;
                 margin-top: -5px;
             }
         }
 
-        .temp-wrapper {
+        > .temp-wrapper {
             border-radius: 0px 20px 20px 0px;
             background-color: $mainColorAlter;
             font-size: 2.2rem;
         }
 
-        @include sm {
+        @include md {
             position: absolute;
             left: -$containerPaddingBigScreens;
             top: -15px;
             flex-direction: column;
 
-            .weather {
+            > .weather-icon-wrapper {
                 border-radius: 0px 20px 20px 20px;
                 transform: translateY(20px);
             }
 
-            .temp-wrapper {
+            > .temp-wrapper {
                 height: 85px;
                 padding-top: 15px;
                 border-radius: 0px 0px 20px 0px;

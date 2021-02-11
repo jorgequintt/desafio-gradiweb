@@ -1,0 +1,31 @@
+.add-location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+    padding: 1.5rem;
+    border: 2px dashed $secondaryColor;
+    border-radius: 1.5rem;
+    background-color: #fff;
+    z-index: 1;
+
+    > .btn {
+        font-size: 1.3rem;
+    }
+
+    > .add-location-icon {
+        display: none;
+        color: rgb(210, 210, 210);
+        font-size: 5rem;
+    }
+
+    @include md {
+        > .btn {
+            font-size: 1rem;
+        }
+
+        > .add-location-icon {
+            display: block;
+        }
+    }
+}

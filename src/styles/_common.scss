@@ -1,4 +1,4 @@
-.weather-icon-wrapper {
+.weather-icon-container {
     width: 50px;
     height: 50px;
     display: flex;
@@ -14,14 +14,71 @@
     flex-direction: row;
     font-size: 1em;
 
-    .value {
+    > .value {
         font-weight: bold;
         margin-right: 3px;
     }
 
-    .celcius-symbol {
+    > .celcius-symbol {
         line-height: 1em;
         font-size: 0.5em;
         letter-spacing: -2px;
+    }
+}
+
+.btn {
+    font-family: 'RobotoCondensed';
+    border-radius: 1em;
+    display: inline;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 0.7em 3em;
+
+    &.primary {
+        background-color: $mainColorAlter;
+        color: white;
+    }
+
+    &.primary:hover {
+        background-color: $mainColor;
+    }
+
+    &.secondary {
+        background-color: $secondaryColorAlter;
+        color: $mainColorAlter;
+    }
+
+    &.secondary:hover {
+        background-color: $mainColorAlter;
+        color: #fff;
+    }
+}
+
+.loading-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    .loading-icon {
+        color: $mainColorAlter;
+    }
+}
+
+.error-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+
+    .error-icon,
+    .error-text {
+        color: red;
     }
 }

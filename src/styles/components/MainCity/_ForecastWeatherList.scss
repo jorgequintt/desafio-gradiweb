@@ -3,21 +3,23 @@
     flex-direction: column;
     align-items: center;
 
-    @include sm {
+    @include md {
         align-items: baseline;
-        max-width: 280px;
     }
 
-    .forecast-title {
+    > .forecast-title {
         font-size: 1rem;
         margin-bottom: 0.8rem;
 
-        .days {
+        > .days {
             font-weight: bold;
         }
     }
 
-    .forecast-list-content {
+    > .forecast-list-content {
+        animation: fadeIn;
+        animation-duration: 0.9s;
+
         display: flex;
         flex-direction: column;
         align-items: center;

@@ -8,6 +8,7 @@
 
 // vendors
 @import 'vendors/fontawesome.css';
+@import 'vendors/animate.css';
 
 // components and common
 @import 'common';
@@ -15,3 +16,6 @@
 @import 'components/MainCity/CurrentWeatherBanner';
 @import 'components/MainCity/ForecastWeatherList';
 @import 'components/MainCity/ForecastWeatherItem';
+@import 'components/Locations/AddLocation';
+@import 'components/Locations/LocationsWeatherList';
+@import 'components/Locations/LocationsWeatherItem';

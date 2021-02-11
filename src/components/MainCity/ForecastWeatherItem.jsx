@@ -3,9 +3,9 @@ import { timestampToDayOfWeek } from '../../util/helpers';
 import WeatherIcon from '../Common/WeatherIcon';
 import WeatherTemp from '../Common/WeatherTemp';
 
-export default function ForecastWeatherItem({ minTemp, maxTemp, weather, day }) {
+export default function ForecastWeatherItem({ minTemp, maxTemp, weather, day, first }) {
     return (
-        <div className="forecast-weather-item">
+        <div className={`forecast-weather-item  ${first ? 'first' : ''}`}>
             <div className="column-1">
                 <WeatherIcon weather={weather} intent="color" />
             </div>

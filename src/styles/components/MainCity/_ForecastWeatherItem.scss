@@ -11,8 +11,17 @@ $weatherItemRoundness: 15px;
     background-color: #fff;
     border-radius: $weatherItemRoundness;
 
-    @include sm {
-        max-width: 230px;
+    &.first .column-3 .min-max-temp {
+        background-color: $mainColorAlter;
+        color: #fff;
+    }
+    &:not(.first) .column-3 .min-max-temp {
+        background-color: $secondaryColor;
+        color: #000;
+    }
+
+    @include md {
+        max-width: 280px;
     }
 
     &:before {
@@ -27,46 +36,44 @@ $weatherItemRoundness: 15px;
         box-shadow: $softShadowStyle;
     }
 
-    .column-1,
-    .column-2,
-    .column-3 {
+    > .column-1,
+    > .column-2,
+    > .column-3 {
         display: flex;
         justify-content: center;
     }
 
-    .column-1 {
-        width: 50px;
+    > .column-1 {
+        width: 60px;
         align-items: center;
     }
 
-    .column-2 {
+    > .column-2 {
         flex: 1;
         display: flex;
         flex-direction: column;
         padding: 0.5rem;
-        row-gap: 8px;
+        row-gap: 5px;
 
-        .weekday {
-            font-size: 0.9rem;
+        > .weekday {
+            font-size: 0.7rem;
         }
-        .weather {
-            font-size: 0.8rem;
+        > .weather {
+            font-size: 0.6rem;
             color: gray;
         }
     }
 
-    .column-3 {
-        width: 70px;
+    > .column-3 {
+        width: 75px;
         height: 65px;
 
-        .min-max-temp {
+        > .min-max-temp {
             width: 100%;
             display: flex;
             flex-direction: row;
             column-gap: 3px;
-            font-size: 1rem;
-            background-color: $mainColorAlter;
-            color: #fff;
+            font-size: 1.2rem;
             justify-content: center;
             align-items: center;
             border-radius: $weatherItemRoundness;

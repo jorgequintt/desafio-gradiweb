@@ -5,6 +5,8 @@ import WeatherFetch from '../classes/WeatherFetch';
 import LocationsWeatherList from './Locations/LocationsWeatherList';
 import CurrentWeather from './MainCity/CurrentWeatherBanner';
 import ForecastWeatherList from './MainCity/ForecastWeatherList';
+import LoadingBox from './Common/LoadingBox';
+import ErrorBox from './Common/ErrorBox';
 
 /**
  * @App Component
@@ -42,6 +44,7 @@ export class App extends Component {
         Promise.all([mainCityDataPromise, parisDataPromise, sydneyDataPromise])
             .then((data) => {
                 const [mainCityData, parisData, sydneyData] = data;
+
                 if (mainCityData.error || parisData.error || sydneyData.error) {
                     return this.setState({ error: 'An error ocurred, please try again.' });
                 }
@@ -61,7 +64,7 @@ export class App extends Component {
         return (
             <div className="container">
                 {this.state.error ? (
-                    this.state.error /* TODO */
+                    <ErrorBox text={this.state.error} iconSize={4} textSize={2} />
                 ) : this.state.mainCityData && this.state.locationsData.length > 0 ? (
                     <React.Fragment>
                         <div className="section-1">
@@ -70,12 +73,13 @@ export class App extends Component {
                         <div className="section-2">
                             <ForecastWeatherList cityData={this.state.mainCityData} />
                         </div>
-                        <div className="section-3">
+                        <div className="section-3"></div>
+                        <div className="section-4">
                             <LocationsWeatherList locations={this.state.locationsData} />
                         </div>
                     </React.Fragment>
                 ) : (
-                    'Loading'
+                    <LoadingBox iconSize={5} />
                 )}
             </div>
         );

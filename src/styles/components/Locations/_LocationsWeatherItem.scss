@@ -1,0 +1,65 @@
+$itemRoundness: 15px;
+
+.locations-weather-item {
+    background-color: #fff;
+    border-radius: $itemRoundness;
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        border-radius: inherit;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 0;
+        box-shadow: $softShadowStyle;
+    }
+
+    > .section-1,
+    > .section-2 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    > .section-1 {
+        > .column-1 .weather-icon-wrapper {
+            background-color: $secondaryColor;
+            border-radius: $itemRoundness;
+            padding: 0.3rem;
+        }
+
+        > .column-2 {
+            > .temp-wrapper {
+                padding: 0rem 1rem;
+                font-size: 2rem;
+            }
+        }
+
+        > .column-3 {
+            display: flex;
+            flex-direction: column;
+            row-gap: 6px;
+            padding-left: 0.3rem;
+
+            .city-name {
+                font-weight: bold;
+                font-size: 0.9rem;
+            }
+            .country-name {
+                font-size: 0.7rem;
+            }
+        }
+    }
+
+    > .section-2 {
+        height: 2rem;
+        div {
+            flex: 1;
+            text-align: center;
+            font-size: 0.6rem;
+        }
+    }
+}

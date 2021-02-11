@@ -1,4 +1,5 @@
 import React from 'react';
+import AddLocation from './AddLocation';
 import LocationWeatherItem from './LocationsWeatherItem';
 
 /**
@@ -29,5 +30,10 @@ export default function LocationsWeatherList({ locations }) {
         );
     }
 
-    return <div className="locations-weather-list">{locationsListItems}</div>;
+    return (
+        <div className="locations-weather-list">
+            <AddLocation />
+            <div className="locations-content">{locationsListItems}</div>
+        </div>
+    );
 }

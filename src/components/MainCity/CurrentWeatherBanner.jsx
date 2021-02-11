@@ -35,7 +35,7 @@ export default function CurrentWeatherBanner({ cityData: { name: cityName, data 
             </div>
 
             <div className="weather-info-wrapper">
-                <div className="weather">
+                <div className="weather-icon-wrapper">
                     <WeatherIcon weather={weather} intent="white" />
                     <div className="weather-title">{weather}</div>
                 </div>
