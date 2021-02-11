@@ -6,9 +6,10 @@
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
 
+// vendors
+@import 'vendors/fontawesome.css';
+
 // components and common
 @import 'common';
 @import 'layout';
-
-// vendors
-@import 'vendors/fontawesome.css';
+@import 'components/MainCity/CurrentWeatherBanner';

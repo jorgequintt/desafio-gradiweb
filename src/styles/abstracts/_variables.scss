@@ -14,8 +14,13 @@ $bgColor: #dce3e9;
 $fa-font-path: 'vendors/webfonts';
 
 /* Layout variables */
-$containerPadding: 35px;
-$gridGap: 25px;
+$containerPaddingBigScreens: 40px;
+$containerPaddingSmallScreens: 20px;
+$gridGap: 30px;
 $roundness: 25px;
 $containerHeight: 550px;
 $containerWidth: $screen-lg-min;
+$bannerRoundness: 22px;
+
+$strongShadowStyle: 10px 30px 60px #00000090;
+$softShadowStyle: 10px 30px 60px #00000033;

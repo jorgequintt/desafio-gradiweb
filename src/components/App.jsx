@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import WeatherFetch from '../classes/WeatherFetch';
 
 import LocationsWeatherList from './Locations/LocationsWeatherList';
-import CurrentWeather from './MainCity/CurrentWeather';
+import CurrentWeather from './MainCity/CurrentWeatherBanner';
 import ForecastWeatherList from './MainCity/ForecastWeatherList';
 
 /**

@@ -34,7 +34,14 @@ module.exports = {
             },
             {
                 test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.woff2$|\.ttf$|\.eot$/,
-                loader: 'file-loader',
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            esModule: false,
+                        },
+                    },
+                ],
             },
         ],
     },

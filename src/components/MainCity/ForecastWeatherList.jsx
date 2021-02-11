@@ -4,7 +4,7 @@ import ForecastWeatherItem from './ForecastWeatherItem';
 export default function ForecastWeatherList({ cityData: { data } }) {
     const forecastItems = [];
 
-    for (let i = 1; i <= 3; i++) {
+    for (let i = 0; i < 3; i++) {
         const dayForecast = data.daily[i];
 
         forecastItems.push(
