@@ -6,7 +6,7 @@ export default function CurrentWeather({ cityData: { name: cityName, data } }) {
     const weather = currentWeather.weather[0].main;
 
     return (
-        <div>
+        <div className="current-weather">
             {cityName} {weather} {Math.round(temp)}
         </div>
     );

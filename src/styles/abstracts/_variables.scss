@@ -1,17 +1,21 @@
-/* BREAKPOINTS */
+/* Breakpoints */
 $screen-sm-min: 576px;
 $screen-md-min: 768px;
 $screen-lg-min: 992px;
 $screen-xl-min: 1200px;
 
-/* COLORS */
+/* Colors */
 $mainColor: #313288;
 $mainColorAlter: #7b67eb;
 $secondaryColor: #dbe7f5;
-
 $bgColor: #dce3e9;
 
-/* OTHER */
-$containerPadding: 2.5rem;
-$gridGap: 1.5rem;
-$roundness: 2.1rem;
+/* Fonts */
+$fa-font-path: 'vendors/webfonts';
+
+/* Layout variables */
+$containerPadding: 35px;
+$gridGap: 25px;
+$roundness: 25px;
+$containerHeight: 550px;
+$containerWidth: $screen-lg-min;

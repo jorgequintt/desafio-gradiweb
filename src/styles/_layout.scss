@@ -14,11 +14,8 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     width: 100%;
     height: 100%;
-    max-width: $screen-lg-min;
-    max-height: 550px;
     background-color: #fff;
     grid-gap: $gridGap;
     padding: $containerPadding;
@@ -30,17 +27,20 @@ body {
         flex: 1;
     }
 
-    /* Section 1 to row on small screens */
+    /* Screens bigger than 'sm' will have section-1 fill an entire row  */
     @include sm {
         flex-direction: row;
+        flex-wrap: wrap;
 
         .section-1 {
             flex: 0 0 100%;
         }
     }
 
-    /* Container roundness only on from large screens and on */
+    /* Screens bigger than 'lg' will have the container rounded and its size constrained */
     @include lg {
+        max-width: $containerWidth;
+        max-height: $containerHeight;
         border-radius: $roundness;
     }
 }
